@@ -10,9 +10,11 @@ class GameScene: SKScene
 {
     //rob is epic
     //yo Quinn sama
-    var player = SKSpriteNode()
+    var doodle = SKSpriteNode()
     
     var background = SKSpriteNode()
+    
+    var bottom = SKSpriteNode()
     
     override func didMove(to view: SKView)
     {
@@ -34,4 +36,17 @@ class GameScene: SKScene
         
     
     }
+    func resetDoodle()
+    {
+        doodle.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        
+        let wait = SKAction.wait(forDuration: 1.0)
+        
+       // let moveDoodle = SKAction.run (bringDoodleToCenter)
+        
+       // run(sequence)
+        
+    }
+    
+    
 }
