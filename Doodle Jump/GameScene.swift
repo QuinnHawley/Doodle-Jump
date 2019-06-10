@@ -12,6 +12,8 @@ class GameScene: SKScene
     //yo Quinn sama
     var player = SKSpriteNode()
     
+    var background = SKSpriteNode()
+    
     override func didMove(to view: SKView)
     {
         let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -20,7 +22,13 @@ class GameScene: SKScene
         physicsBody = borderBody
         physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
     
+        background = SKSpriteNode(imageNamed: "background")
+        background.size = CGSize(width: frame.width, height: frame.height * 1.2)
+        background.position = CGPoint(x: 375, y: 620)
+        background.zPosition = -1000
+        addChild(background)
         
+
         
         
         
