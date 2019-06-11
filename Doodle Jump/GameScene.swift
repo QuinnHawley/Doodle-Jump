@@ -16,6 +16,8 @@ class GameScene: SKScene
     
     var bottom = SKSpriteNode()
     
+    var platform = SKSpriteNode()
+    
     override func didMove(to view: SKView)
     {
         let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -30,23 +32,26 @@ class GameScene: SKScene
         background.zPosition = -1000
         addChild(background)
         
+        
+        func addPlatform() {
+            
+            // MARK: - Set up enemy and its movements
+            platform = SKSpriteNode(imageNamed: "platform")
+            platform.zPosition = 5
+            // this is where the enemy starts
+            platform.position = CGPoint(x: 0, y: 300)
+            self.addChild(platform)
+            // I want it to move to the end of the screen within 1 sec
 
         
         
-        
     
-    }
-    func resetDoodle()
-    {
-        doodle.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+    
+   
+        }
         
-        let wait = SKAction.wait(forDuration: 1.0)
-        
-       // let moveDoodle = SKAction.run (bringDoodleToCenter)
-        
-       // run(sequence)
         
     }
-    
-    
+
+
 }
