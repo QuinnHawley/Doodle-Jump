@@ -33,11 +33,17 @@ class GameScene: SKScene
         addChild(background)
         
         
-        func addPlatform() {
+        func addPlatform()
+        {
             
             // MARK: - Set up enemy and its movements
             platform = SKSpriteNode(imageNamed: "platform")
-            platform.zPosition = 5
+            platform.size = CGSize(width: 100, height: 25)
+            platform.physicsBody?.affectedByGravity = false
+            platform.physicsBody?.allContactedBodies()
+            platform.physicsBody?.pinned = true
+            platform.physicsBody?.isDynamic = true
+            //platform.zPosition = 1
             // this is where the enemy starts
             platform.position = CGPoint(x: 0, y: 300)
             self.addChild(platform)
@@ -49,7 +55,7 @@ class GameScene: SKScene
     
    
         }
-        
+       addPlatform()
         
     }
 
